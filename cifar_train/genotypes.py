@@ -1,0 +1,61 @@
+# 2019.11.25-Changed architecture-coding form
+#            Huawei Technologies Co., Ltd. <foss@huawei.com> 
+from collections import namedtuple
+
+Genotype = namedtuple('Genotype', 'gene concat')
+
+PRIMITIVES = [
+    'skip_connect',
+    'sep_conv_3x3'
+]
+
+s1 = Genotype(gene=[[('skip_connect', 0, 2), ('sep_conv_3x3', 0, 2), ('skip_connect', 1, 2), ('skip_connect', 1, 3),
+                     ('sep_conv_3x3', 1, 3), ('sep_conv_3x3', 2, 3), ('skip_connect', 0, 4), ('sep_conv_3x3', 1, 4),
+                     ('skip_connect', 2, 4), ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5)],
+                    [('skip_connect', 0, 2), ('sep_conv_3x3', 0, 2), ('skip_connect', 0, 3), ('sep_conv_3x3', 0, 3),
+                     ('skip_connect', 1, 3), ('sep_conv_3x3', 1, 3), ('skip_connect', 0, 4), ('sep_conv_3x3', 0, 4),
+                     ('skip_connect', 2, 4), ('sep_conv_3x3', 3, 4), ('sep_conv_3x3', 2, 5), ('skip_connect', 3, 5),
+                     ('sep_conv_3x3', 3, 5), ('sep_conv_3x3', 4, 5)],
+                    [('skip_connect', 0, 2), ('sep_conv_3x3', 0, 2), ('skip_connect', 1, 2), ('sep_conv_3x3', 0, 3),
+                     ('skip_connect', 1, 3), ('sep_conv_3x3', 1, 3), ('skip_connect', 0, 4), ('sep_conv_3x3', 0, 4),
+                     ('sep_conv_3x3', 0, 5), ('skip_connect', 1, 5), ('sep_conv_3x3', 1, 5), ('sep_conv_3x3', 3, 5)],
+                    [('skip_connect', 1, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3), ('sep_conv_3x3', 0, 3),
+                     ('skip_connect', 0, 4), ('sep_conv_3x3', 0, 4), ('sep_conv_3x3', 3, 4), ('sep_conv_3x3', 1, 5),
+                     ('sep_conv_3x3', 2, 5)],
+                    [('sep_conv_3x3', 0, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3), ('sep_conv_3x3', 0, 3),
+                     ('sep_conv_3x3', 1, 3), ('skip_connect', 1, 4), ('sep_conv_3x3', 1, 4), ('sep_conv_3x3', 2, 4),
+                     ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5), ('sep_conv_3x3', 3, 5)],
+                    [('sep_conv_3x3', 0, 2), ('skip_connect', 1, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3),
+                     ('sep_conv_3x3', 0, 3), ('skip_connect', 1, 3), ('sep_conv_3x3', 2, 3), ('skip_connect', 0, 4),
+                     ('skip_connect', 1, 4), ('sep_conv_3x3', 3, 4), ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5),
+                     ('sep_conv_3x3', 3, 5), ('sep_conv_3x3', 4, 5)],
+                    [('sep_conv_3x3', 0, 2), ('skip_connect', 1, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3),
+                     ('sep_conv_3x3', 0, 3), ('sep_conv_3x3', 1, 3), ('sep_conv_3x3', 2, 3), ('skip_connect', 0, 4),
+                     ('sep_conv_3x3', 0, 4), ('sep_conv_3x3', 1, 4), ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5),
+                     ('sep_conv_3x3', 1, 5), ('sep_conv_3x3', 3, 5)],
+                    [('skip_connect', 0, 2), ('sep_conv_3x3', 0, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3),
+                     ('sep_conv_3x3', 0, 3), ('skip_connect', 1, 3), ('sep_conv_3x3', 1, 3), ('sep_conv_3x3', 0, 4),
+                     ('skip_connect', 1, 4), ('sep_conv_3x3', 1, 4), ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5),
+                     ('sep_conv_3x3', 1, 5), ('sep_conv_3x3', 3, 5)],
+                    [('sep_conv_3x3', 0, 2), ('skip_connect', 1, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3),
+                     ('sep_conv_3x3', 0, 3), ('skip_connect', 1, 3), ('sep_conv_3x3', 1, 3), ('skip_connect', 0, 4),
+                     ('sep_conv_3x3', 0, 4), ('sep_conv_3x3', 1, 4), ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5),
+                     ('sep_conv_3x3', 1, 5)],
+                    [('skip_connect', 0, 2), ('sep_conv_3x3', 0, 2), ('skip_connect', 1, 2), ('sep_conv_3x3', 1, 2),
+                     ('sep_conv_3x3', 0, 3), ('skip_connect', 1, 3), ('sep_conv_3x3', 1, 3), ('sep_conv_3x3', 2, 3),
+                     ('sep_conv_3x3', 0, 4), ('sep_conv_3x3', 1, 4), ('sep_conv_3x3', 2, 4), ('sep_conv_3x3', 3, 4),
+                     ('sep_conv_3x3', 0, 5), ('sep_conv_3x3', 1, 5), ('sep_conv_3x3', 2, 5), ('sep_conv_3x3', 3, 5),
+                     ('sep_conv_3x3', 4, 5)],
+                    [('sep_conv_3x3', 0, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3), ('sep_conv_3x3', 1, 3),
+                     ('skip_connect', 0, 4), ('skip_connect', 1, 4), ('sep_conv_3x3', 1, 4), ('skip_connect', 0, 5),
+                     ('sep_conv_3x3', 1, 5), ('sep_conv_3x3', 2, 5), ('sep_conv_3x3', 4, 5)],
+                    [('sep_conv_3x3', 0, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3), ('sep_conv_3x3', 0, 3),
+                     ('sep_conv_3x3', 1, 3), ('sep_conv_3x3', 2, 3), ('skip_connect', 0, 4), ('sep_conv_3x3', 0, 4),
+                     ('sep_conv_3x3', 3, 4), ('skip_connect', 0, 5), ('skip_connect', 1, 5), ('sep_conv_3x3', 3, 5),
+                     ('sep_conv_3x3', 4, 5)],
+                    [('skip_connect', 0, 2), ('sep_conv_3x3', 1, 2), ('skip_connect', 0, 3), ('sep_conv_3x3', 1, 3),
+                     ('skip_connect', 0, 4), ('skip_connect', 1, 4), ('sep_conv_3x3', 1, 4), ('skip_connect', 0, 5),
+                     ('sep_conv_3x3', 2, 5), ('sep_conv_3x3', 3, 5)],
+                    [('sep_conv_3x3', 0, 2), ('sep_conv_3x3', 1, 2), ('sep_conv_3x3', 0, 3), ('sep_conv_3x3', 1, 3),
+                     ('skip_connect', 1, 4), ('sep_conv_3x3', 1, 4), ('skip_connect', 0, 5), ('sep_conv_3x3', 0, 5),
+                     ('sep_conv_3x3', 1, 5)]], concat=range(2, 6))
